@@ -9,12 +9,12 @@
         <div class="col-md-6 mb-3">
             <label class="form-label">Nama</label>
             <input type="text" name="name" class="form-control"
-               value="<?= $data['guru']->name ?>">
+               value="<?= $data['guru']->name ?>" required>
         </div>
 
         <div class="col-md-6 mb-3">
             <label class="form-label">Jabatan</label>
-            <select name="role" class="form-control">
+            <select name="role" class="form-control" required>
             <option value="bendahara" <?= $data['guru']->role == 'bendahara' ? 'selected' : '' ?>>Bendahara</option>
             <option value="wali" <?= $data['guru']->role == 'walikelas' ? 'selected' : '' ?>>Wali Kelas</option>
         </select>
@@ -23,13 +23,13 @@
         <div class="col-md-6 mb-3">
             <label class="form-label">Username</label>
             <input type="text" name="username" class="form-control"
-               value="<?= $data['guru']->username ?>">
+               value="<?= $data['guru']->username ?>" required>
         </div>
 
         <div class="col-md-6 mb-3">
             <label class="form-label">Password</label>
             <input type="text" name="password" class="form-control"
-               value="<?= Crypt::decrypt($data['guru']->password) ?>">
+               value="<?= Crypt::decrypt($data['guru']->password) ?>" required>
         </div>
     </div>
 

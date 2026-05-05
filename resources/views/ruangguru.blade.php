@@ -24,7 +24,7 @@
                     <span>Kelola Data Siswa</span>
                 </div>
             </a>
-            <a href="">
+            <a href="/datainfaq">
                 <div class="menubarlist <?= $data['title'] == 'Kelola Data Infaq' ? 'active' : '' ?>">
                     <i data-lucide="list-checks"></i>
                     <span>Kelola Data Infaq</span>

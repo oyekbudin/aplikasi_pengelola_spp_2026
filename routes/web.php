@@ -6,6 +6,7 @@ use App\Http\Controllers\PengaturanCon;
 use App\Http\Controllers\GuruCon;
 use App\Http\Controllers\WaliCon;
 use App\Http\Controllers\SiswaCon;
+use App\Http\Controllers\InfaqCon;
 
 
 
@@ -60,5 +61,18 @@ Route::post('/naikkelas', [SiswaCon::class, 'naikkelas']);
 
 Route::get('/tambahsiswa/{id}', [SiswaCon::class, 'datasiswa_tambah']);
 Route::post('/simpansiswa', [SiswaCon::class, 'datasiswa_simpan']);
+Route::post('/hapussiswa/{id}', [SiswaCon::class, 'hapus']);
+Route::get('/editsiswa/{id}', [SiswaCon::class, 'edit']);
+Route::post('/updatesiswa/{id}', [SiswaCon::class, 'update']);
+
+//InfaqCon
+Route::get('/datainfaq', [InfaqCon::class, 'index'])->name('index');
+Route::get('/datainfaq/tahunajaran/{id}', [InfaqCon::class, 'byTahunajaran'])->name('infaq.tahunajaran');
+
+Route::get('/tambahinfaq/{id}', [InfaqCon::class, 'datainfaq_tambah']);
+Route::post('/simpaninfaq', [InfaqCon::class, 'datainfaq_simpan']);
+Route::post('/hapusinfaq/{id}', [InfaqCon::class, 'hapus']);
+Route::get('/editinfaq/{id}', [InfaqCon::class, 'edit']);
+Route::post('/updateinfaq/{id}', [InfaqCon::class, 'update']);
 
 });

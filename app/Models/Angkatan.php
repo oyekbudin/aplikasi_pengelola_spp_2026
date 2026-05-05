@@ -25,4 +25,9 @@ class Angkatan extends Model
     {
         return $this->belongsTo(Kelompok::class, 'id_kelompok', 'id');
     }
+
+    public function siswa()
+    {
+        return $this->hasMany(Siswa::class, 'id_angkatan');
+    }
 }

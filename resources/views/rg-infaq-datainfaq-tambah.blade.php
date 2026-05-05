@@ -8,42 +8,60 @@
     </div>
     <?php endif; ?>
 
-    <form method="POST" action="/simpansiswa">
+    <form method="POST" action="/simpaninfaq">
         @csrf
 
         <table class="table table-bordered table-hover">
             <thead class="table-light">
                 <tr>
                     <th width="50">No</th>
-                    <th>Nama</th>
-                    <th>No Whatsapp</th>
+                    <th>Nama Infaq</th>
+                    <th>Kelas</th>
+                    <th>Harga</th>
                 </tr>
             </thead>
             <tbody>
 
-                <?php for($i = 0; $i < 30; $i++): ?>
-                <?php
-                $nama = old('name')[$i] ?? '';
-                $wa = old('no_whatsapp')[$i] ?? '';
-                $invalid = ($nama && !$wa) || (!$nama && $wa);
-                ?>
+                <?php for($i = 0; $i < 10; $i++): ?>
 
-                <tr class="<?= $invalid ? 'table-danger' : '' ?>">
+                <tr>
                     <td><?= $i + 1 ?></td>
+
+                    <!-- Nama Infaq -->
                     <td>
                         <input type="text" name="name[]" class="form-control" value="<?= old('name')[$i] ?? '' ?>">
                     </td>
+
+                    <!-- Kelas -->
                     <td>
-                        <input type="text" name="no_whatsapp[]" class="form-control"
-                            value="<?= old('no_whatsapp')[$i] ?? '' ?>">
+                        <select name="id_kelompok[]" class="form-control">
+                            <option value="">-- Pilih Kelas --</option>
+
+                            <?php foreach($data['kelompok'] as $k): ?>
+                            <option value="<?= $k->id ?>"
+                                <?= (old('id_kelompok')[$i] ?? '') == $k->id ? 'selected' : '' ?>>
+                                <?= $k->name ?>
+                            </option>
+                            <?php endforeach; ?>
+
+                        </select>
                     </td>
+
+                    <!-- Nominal -->
+                    <td>
+                        <input type="number" name="harga[]" class="form-control" placeholder="50000"
+                            value="<?= old('harga')[$i] ?? '' ?>">
+                    </td>
+
                 </tr>
+
                 <?php endfor; ?>
 
             </tbody>
         </table>
 
-        <input type="hidden" name="id_angkatan" value="<?= $data['angkatan']->id ?>">
+        <input type="hidden" name="id_tahunajaran" value="<?= $data['tahunajaran']->id ?>">
+     
 
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-primary">

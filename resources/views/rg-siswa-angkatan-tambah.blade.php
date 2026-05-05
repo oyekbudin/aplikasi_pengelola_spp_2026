@@ -14,7 +14,19 @@
     </blockquote>
 
     <div class="mb-3">
-        <p>Kemudian anda akan menambahkan kelas baru dengan mengisikan tahun masuk pada kolom di bawah ini:</p>
+        <p>Kemudian anda perlu mengisi data:</p>
+    </div>
+    <blockquote class="blockquote p-3 bg-light border-start border-4 border-primary rounded">
+
+        <p class="mb-2">Tahun Masuk <i data-lucide="arrow-right"></i> Untuk membuat Kelas baru. Contoh: 2026</p>
+        <p class="mb-2">Tahun Ajaran <i data-lucide="arrow-right"></i> Untuk membuat Infaq pada tahun ajaran ini. Contoh: 2026/2027</p>
+
+    </blockquote>
+
+    <div class="mb-3">
+        <p>Setelah ini, anda dapat menambah, mengatur dan menghapus Infaq di menu <span class="badge bg-primary rounded-pill px-3 py-2">
+                Kelola Data Infaq
+            </span></p>
     </div>
 
 
@@ -25,6 +37,11 @@
         <div class="col-md-6 mb-3">
             <label class="form-label">Tahun Masuk</label>
             <input type="text" name="name" class="form-control" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Tahun Ajaran</label>
+            <input type="text" name="tahunajaran_name" class="form-control" required>
         </div>
 
         <!--div class="col-md-6 mb-3">

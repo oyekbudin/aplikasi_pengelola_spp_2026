@@ -32,7 +32,7 @@
             <div class="menuitem btn btn-success">
                 <i data-lucide="plus"></i>
                 
-                <span>Kenaikan Kelas & Tambah Kelas Baru</span>
+                <span>Kenaikan Kelas & Tahun Ajaran Baru</span>
             </div>
         </a>
 
